@@ -7,7 +7,7 @@ const userRoutes = require('./routes/userRoutes');
 const requestsRoutes = require('./routes/requestsRoutes');
 
 const app = express();
-const PORT = process.env.PORT || 5000;
+const PORT = process.env.PORT || 3000;
 
 app.use(cors());
 app.use(bodyParser.json());
