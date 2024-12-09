@@ -4,6 +4,7 @@ const bodyParser = require('body-parser');
 const cors = require('cors');
 const db = require('./config/db');
 const userRoutes = require('./routes/userRoutes');
+const requestsRoutes = require('./routes/requestsRoutes');
 
 const app = express();
 const PORT = process.env.PORT || 5000;
@@ -15,7 +16,8 @@ app.use(express.json());
 
 // API Routes
 app.use('/api/users', userRoutes);
-
+console.log('userRoutes is successfully mounted');
+app.use('/api/requests', requestsRoutes);
 
 
 // Test endpoint

@@ -1,20 +1,15 @@
 const express = require('express');
 const router = express.Router();
-const requestController = require('../controllers/requestController');
+const requestController = require('./data-requisition-system/controllers/requestController');  // Import the controller
 
-// Get all requests
+// Define routes and connect them to controller functions
 router.get('/requests', (req, res) => {
-    console.log("Received GET request for /requests"); // Add this log
-    requestController.getRequests(req, res);
+  console.log("Received GET request for /requests"); // Add this log
+  requestController.getRequests(req, res);
 });
-
-// Create a new request
 router.post('/requests', requestController.createRequest);
-
-// Update request status
 router.put('/requests/:id', requestController.updateRequest);
-
-// Delete a request
 router.delete('/requests/:id', requestController.deleteRequest);
 
+// Export the router
 module.exports = router;
