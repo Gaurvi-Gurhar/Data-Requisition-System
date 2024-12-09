@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>View Response</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <header>
+        <h1>View Response</h1>
+    </header>
+
+    <div id="response-section">
+        <h2>Responses to Your Requests</h2>
+        <table>
+            <thead>
+                <tr>
+                    <th>Request ID</th>
+                    <th>Item Name</th>
+                    <th>Response Status</th>
+                    <!-- <th>Response Date</th>
+                    <th>Remarks</th> -->
+                    <th>Action</th>
+                </tr>
+            </thead>
+            <tbody>
+                <!-- Sample response data -->
+                <tr>
+                    <td>REQ12345</td>
+                    <td>Laptop</td>
+                    <td>Approved</td>
+                    <!-- <td>2024-11-25</td>
+                    <td>Request approved for procurement.</td> -->
+                    <td>
+                        <button onclick="navigateToPage('update-request.html', 'REQ12345')">Update</button>
+                        <button onclick="navigateToPage('cancel-request.html', 'REQ12345')">Cancel</button>
+                    </td>
+                </tr>
+                <tr>
+                    <td>REQ67890</td>
+                    <td>Projector</td>
+                    <td>Pending</td>
+                    <!-- <td>2024-11-26</td>
+                    <td>Awaiting approval from management.</td> -->
+                    <td>
+                        <button onclick="navigateToPage('update-request.html', 'REQ67890')">Update</button>
+                        <button onclick="navigateToPage('cancel-request.html', 'REQ67890')">Cancel</button>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+
+    <footer>
+        <p><a href="dashboard.html">Back to Dashboard</a></p>
+    </footer>
+
+    <script>
+        /**
+         * Navigates to a specific page with the `requestId` as a query parameter.
+         * @param {string} page - The page to navigate to (update-request or cancel-request).
+         * @param {string} requestId - The ID of the request to pass to the page.
+         */
+        function navigateToPage(page, requestId) {
+            const url = `${page}?requestId=${encodeURIComponent(requestId)}`;
+            window.location.href = url;
+        }
+    </script>
+</body>
+</html>

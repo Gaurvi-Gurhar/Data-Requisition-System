@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>View Consolidated Requests</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <header>
+        <h1>View Consolidated Requests</h1>
+    </header>
+
+    <main>
+        <div class="filters">
+            <form id="filters-form">
+                <label for="request-date">Request Date:</label>
+                <input type="date" id="request-date" name="request-date">
+                
+                <label for="item-name">Item Name:</label>
+                <select id="item-name" name="item-name">
+                    <option value="all">All</option>
+                    <option value="item1">Item 1</option>
+                    <option value="item2">Item 2</option>
+                    <option value="item3">Item 3</option>
+                </select>
+
+                <label for="status">Status:</label>
+                <select id="status" name="status">
+                    <option value="all">All</option>
+                    <option value="pending">Pending</option>
+                    <option value="approved">Approved</option>
+                    <option value="rejected">Rejected</option>
+                </select>
+
+                <button type="button" onclick="applyFilters()">Apply Filters</button>
+            </form>
+        </div>
+
+        <table class="requests-table" id="requests-table">
+            <thead>
+                <tr>
+                    <th>Request ID</th>
+                    <th>User Name</th>
+                    <th>Group</th>
+                    <th>Item Name</th>
+                    <th>Quantity</th>
+                    <th>Status</th>
+                    <th>Request Date</th>
+                </tr>
+            </thead>
+            <tbody id="requests-table-body">
+                <!-- Example Dummy Data -->
+                <tr class="request-row" data-status="pending" data-item="item1">
+                    <td>001</td>
+                    <td>Yashu Yadav</td>
+                    <td>Para-09</td>
+                    <td>Item 1</td>
+                    <td>2</td>
+                    <td>Pending</td>
+                    <td>2024-11-01</td>
+                </tr>
+                <tr class="request-row" data-status="approved" data-item="item2">
+                    <td>002</td>
+                    <td>Amit Yadav</td>
+                    <td>HRD</td>
+                    <td>Item 2</td>
+                    <td>1</td>
+                    <td>Approved</td>
+                    <td>2024-11-05</td>
+                </tr>
+            </tbody>
+        </table>
+    </main>
+
+    <footer>
+        <p><a href="admin-dashboard.html">Back to Dashboard</a></p>
+    </footer>
+
+    <script>
+        function applyFilters() {
+            const requestDate = document.getElementById("request-date").value;
+            const itemName = document.getElementById("item-name").value;
+            const status = document.getElementById("status").value;
+            const rows = document.querySelectorAll(".request-row");
+
+            rows.forEach(row => {
+                const rowStatus = row.getAttribute("data-status");
+                const rowItem = row.getAttribute("data-item");
+                const rowRequestDate = row.cells[5].textContent;
+
+                // simple date filter logic (convert date strings to Date objects)
+                const showByRequestDate = (requestDate === "" || new Date(rowRequestDate) >= new Date(requestDate));
+
+                // filter by status and item name
+                const showByStatus = (status === "all" || status === rowStatus);
+                const showByItem = (itemName === "all" || itemName === rowItem);
+
+                // show or hide rows based on filters
+                if (showByRequestDate && showByStatus && showByItem) {
+                    row.style.display = "";
+                } else {
+                    row.style.display = "none";
+                }
+            });
+        }
+    </script>
+</body>
+</html>

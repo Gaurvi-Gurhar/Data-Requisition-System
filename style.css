@@ -1,0 +1,582 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f4f4f9;
+    color: #333;
+    padding: 20px;
+}
+
+header {
+    text-align: center;
+    margin-bottom: 30px;
+}
+
+h1 {
+    font-size: 2.5rem;
+    color: #0056b3;
+}
+
+#login {
+    max-width: 400px;
+    margin: 0 auto;
+    padding: 20px;
+    background-color: #fff;
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+#login form {
+    display: flex;
+    flex-direction: column;
+}
+
+label {
+    margin-top: 10px;
+    font-weight: bold;
+}
+
+input {
+    margin-top: 5px;
+    padding: 10px;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+}
+
+button {
+    margin-top: 20px;
+    padding: 10px;
+    background-color: #0056b3;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+button:hover {
+    background-color: #00408f;
+}
+
+footer {
+    text-align: center;
+    margin-top: 30px;
+    font-size: 0.8rem;
+}
+
+
+/* register style ----------------------------------------*/
+#register {
+    max-width: 400px;
+    margin: 0 auto;
+    padding: 20px;
+    background-color: #fff;
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+#register form {
+    display: flex;
+    flex-direction: column;
+}
+
+label {
+    margin-top: 10px;
+    font-weight: bold;
+}
+
+input, select {
+    margin-top: 5px;
+    padding: 10px;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+}
+
+button {
+    margin-top: 20px;
+    padding: 10px;
+    background-color: #0056b3;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+button:hover {
+    background-color: #00408f;
+}
+
+#password-strength {
+    font-size: 0.9em;
+    margin-top: 5px;
+}
+
+
+
+
+
+
+/* Dashboard Styles ---------------------------------------- */
+#dashboard, #admin-dashboard {
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 20px;
+    background-color: #fff;
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+#dashboard h2, #admin-dashboard h2 {
+    font-size: 1.8rem;
+    margin-bottom: 20px;
+    color: #0056b3;
+    text-align: center;
+}
+
+#dashboard ul, #admin-dashboard ul {
+    list-style: none;
+    padding: 0;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    margin-top: 20px;
+}
+
+#dashboard ul li a, 
+#admin-dashboard ul li a {
+    display: block;
+    text-decoration: none;
+    padding: 10px 20px;
+    background-color: #0056b3;
+    color: white;
+    border-radius: 5px;
+    text-align: center;
+    font-size: 1rem;
+    font-weight: bold;
+    transition: background-color 0.3s;
+}
+
+#dashboard ul li a:hover, 
+#admin-dashboard ul li a:hover {
+    background-color: #00408f;
+}
+
+#dashboard p, #admin-dashboard p {
+    font-size: 1rem;
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+/* footer specific to dash ---------------------------------------- */
+#dashboard footer, #admin-dashboard footer {
+    margin-top: 30px;
+    text-align: center;
+    font-size: 0.9rem;
+    color: #666;
+}
+
+
+
+
+
+
+
+/* view-reqest------------------------------------------ */
+/* table styling for reqst list */
+#request-list table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 20px;
+}
+
+#request-list th, #request-list td {
+    border: 1px solid #ddd;
+    padding: 10px;
+    text-align: center;
+}
+
+#request-list th {
+    background-color: #0056b3;
+    color: white;
+}
+
+#request-list tr:nth-child(even) {
+    background-color: #f4f4f9;
+}
+
+#request-list tr:hover {
+    background-color: #e2e6ea;
+}
+
+#request-list td {
+    font-size: 0.9rem;
+}
+
+footer {
+    margin-top: 20px;
+    text-align: center;
+}
+/* ---------- */
+#pagination {
+    margin-top: 20px;
+    text-align: center;
+}
+
+#pagination button {
+    padding: 8px 16px;
+    margin: 0 5px;
+    background-color: #0056b3;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+#pagination button:disabled {
+    background-color: #ccc;
+    cursor: not-allowed;
+}
+
+#pagination span {
+    font-size: 1rem;
+    font-weight: bold;
+}
+
+
+
+/* style for creating new req. ------------------------ */
+#new-request {
+    max-width: 600px;
+    margin: 0 auto;
+    padding: 20px;
+    background-color: #fff;
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+#new-request form {
+    display: flex;
+    flex-direction: column;
+}
+
+#new-request label {
+    margin-top: 10px;
+    font-weight: bold;
+}
+
+#new-request input, #new-request select {
+    margin-top: 5px;
+    padding: 10px;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+}
+
+#new-request button {
+    margin-top: 20px;
+    padding: 10px;
+    background-color: #0056b3;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+#new-request button:hover {
+    background-color: #00408f;
+}
+
+
+
+/* style for update req. ---------------- */
+
+/* Add to styles.css */
+#update-request {
+    max-width: 600px;
+    margin: 0 auto;
+    padding: 20px;
+    background-color: #fff;
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+#update-request form {
+    display: flex;
+    flex-direction: column;
+}
+
+#update-request label {
+    margin-top: 10px;
+    font-weight: bold;
+}
+
+#update-request input, #update-request select {
+    margin-top: 5px;
+    padding: 10px;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+}
+
+#update-request button {
+    margin-top: 20px;
+    padding: 10px;
+    background-color: #0056b3;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+#update-request button:hover {
+    background-color: #00408f;
+}
+
+
+
+/* styles for cancel req. --------------------------- */
+
+#cancel-request {
+    max-width: 500px;
+    margin: 0 auto;
+    padding: 20px;
+    background-color: #fff;
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+#cancel-request form {
+    display: flex;
+    flex-direction: column;
+}
+
+label {
+    margin-top: 10px;
+    font-weight: bold;
+}
+
+input {
+    margin-top: 5px;
+    padding: 10px;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    background-color: #f4f4f4;
+}
+
+/* cancel-btn {
+    margin-top: 20px;
+    padding: 10px;
+    background-color: #d9534f;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+cancel-btn:hover {
+    background-color: #c9302c;
+} */
+
+
+
+/* view response------------------------------------- */
+
+#response-section {
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 20px;
+    background-color: #fff;
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 20px;
+}
+
+h2{
+    text-align: center;
+}
+
+th, td {
+    padding: 10px;
+    text-align: left;
+    border: 1px solid #ddd;
+}
+
+th {
+    background-color: #f4f4f9;
+}
+
+tr:nth-child(even) {
+    background-color: #f9f9f9;
+}
+
+footer {
+    text-align: center;
+    margin-top: 30px;
+    font-size: 0.8rem;
+}
+
+footer a {
+    color: #0056b3;
+    text-decoration: none;
+}
+
+footer a:hover {
+    text-decoration: underline;
+}
+
+
+
+
+
+
+
+
+/* admin dash features---------------------------------------------------------------------------------------- */
+
+/* view user req ---------------------------- */
+.view-details {
+    padding: 5px 10px;
+    background-color: #0056b3;
+    color: white;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    font-size: 0.9rem;
+}
+
+.view-details:hover {
+    background-color: #00408f;
+}
+
+
+
+/* allocate items----------------------------------------- */
+.approve-btn, .reject-btn {
+    padding: 5px 10px;
+    color: white;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    font-size: 0.9rem;
+}
+
+.approve-btn {
+    background-color: #28a745; /* Green for approve */
+}
+
+.approve-btn:hover {
+    background-color: #218838;
+}
+
+.reject-btn {
+    background-color: #dc3545; /* Red for reject */
+}
+
+.reject-btn:hover {
+    background-color: #c82333;
+}
+
+
+
+
+/* generate report --------------------------------------------- */
+#report-section form {
+    margin-bottom: 20px;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 15px;
+}
+
+#report-section label {
+    margin-bottom: 5px;
+    font-weight: bold;
+}
+
+#report-section input, #report-section select, #report-section button {
+    padding: 10px;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+}
+
+#report-section table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 20px;
+}
+
+#report-section table th, #report-section table td {
+    border: 1px solid #ddd;
+    padding: 10px;
+    text-align: left;
+}
+
+#report-section table th {
+    background-color: #f4f4f9;
+    color: #333;
+}
+
+#report-section table tbody tr:nth-child(even) {
+    background-color: #f9f9f9;
+}
+
+#report-section table tbody tr:hover {
+    background-color: #f1f1f1;
+}
+
+
+
+
+
+/* view consolidated req. ------------------------------- */
+/* general styles for req. table */
+.requests-table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 20px;
+}
+
+.requests-table th, .requests-table td {
+    padding: 12px;
+    text-align: left;
+    border: 1px solid #ddd;
+}
+
+.requests-table th {
+    background-color: #f4f4f9;
+    font-weight: bold;
+}
+
+.requests-table td button {
+    background-color: #0056b3;
+    color: white;
+    border: none;
+    padding: 5px 10px;
+    margin: 5px;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.requests-table td button:hover {
+    background-color: #00408f;
+}
+
+.filters {
+    margin-bottom: 20px;
+}
+
+.filters form {
+    display: flex;
+    gap: 10px;
+    align-items: center;
+}
+
+.filters input, .filters select, .filters button {
+    padding: 8px;
+    font-size: 1rem;
+}

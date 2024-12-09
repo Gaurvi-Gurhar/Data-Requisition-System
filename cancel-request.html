@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cancel Request</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <header>
+        <h1>Cancel Request</h1>
+    </header>
+
+    <div id="cancel-request">
+        <h2>Are you sure you want to cancel the following request?</h2>
+        <form id="cancel-form">
+            <label for="request-id">Request ID:</label>
+            <input type="text" id="request-id" name="request-id" readonly>
+
+            <!-- <label for="item-name">Item Name:</label>
+            <input type="text" id="item-name" name="item-name" readonly>
+
+            <label for="quantity">Quantity:</label>
+            <input type="text" id="quantity" name="quantity" readonly>
+
+            <label for="priority">Priority:</label>
+            <input type="text" id="priority" name="priority" readonly>
+
+            <label for="deadline">Deadline:</label>
+            <input type="text" id="deadline" name="deadline" readonly> -->
+
+            <button type="button" id="cancel-btn">Cancel Request</button>
+        </form>
+    </div>
+
+    <footer>
+        <p><a href="dashboard.html">Back to Dashboard</a></p>
+    </footer>
+
+    <script src="cancel-request.js"></script>
+</body>
+</html>

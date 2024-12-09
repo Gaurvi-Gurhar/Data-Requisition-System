@@ -1,0 +1,165 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Generate Report</title>
+    <link rel="stylesheet" href="style.css">
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f4f4f9;
+            margin: 0;
+            padding: 0;
+        }
+
+        header {
+            /* background-color: #2a3d66; */
+            color: white;
+            padding: 20px 0;
+            text-align: center;
+        }
+
+        #report-section {
+            margin: 20px auto;
+            padding: 30px;
+            background-color: #fff;
+            border-radius: 8px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            max-width: 800px;
+        }
+
+        h2 {
+            color: #0056b3;
+            margin-bottom: 20px;
+        }
+
+        form {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 15px;
+            margin-bottom: 20px;
+        }
+
+        label {
+            font-size: 14px;
+            font-weight: bold;
+            margin-bottom: 5px;
+            color: #333;
+        }
+
+        input, select {
+            padding: 10px;
+            font-size: 14px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            width: 100%;
+        }
+
+        button {
+            margin-left: 50%;
+            background-color: #0056b3;
+            color: white;
+            padding: 12px;
+            font-size: 16px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            width: 100%;
+            margin-top: 10px;
+        }
+
+        button:hover {
+            background-color: #00408f;
+        }
+
+        #report-output {
+            margin-top: 20px;
+            background-color: #f9f9f9;
+            padding: 15px;
+            border-radius: 8px;
+            border: 1px solid #ccc;
+        }
+
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-top: 15px;
+        }
+
+        th, td {
+            padding: 12px;
+            text-align: left;
+            border-bottom: 1px solid #ddd;
+        }
+
+        th {
+            background-color: #2a3d66;
+            color: white;
+        }
+
+
+        footer a {
+            color: #0056b3;
+            text-decoration: none;
+        }
+
+    </style>
+</head>
+<body>
+    <header>
+        <h1>Generate Report</h1>
+    </header>
+
+    <div id="report-section">
+        <h2>Select Filters</h2>
+        <form id="report-form">
+            <label for="start-date">Start Date:</label>
+            <input type="date" id="start-date" name="start-date">
+
+            <label for="end-date">End Date:</label>
+            <input type="date" id="end-date" name="end-date">
+
+            <label for="status">Status:</label>
+            <select id="status" name="status">
+                <option value="all">All</option>
+                <option value="pending">Pending</option>
+                <option value="approved">Approved</option>
+                <option value="rejected">Rejected</option>
+            </select>
+
+            <label for="report-type">Report Type:</label>
+            <select id="report-type" name="report-type">
+                <option value="pie-chart">Pie Chart</option>
+                <option value="bar-chart">Bar Chart</option>
+                <option value="excel-sheet">Excel Sheet</option>
+                <option value="pdf">PDF</option>
+            </select>
+
+            <!-- <label for="report-view">Report View:</label>
+            <select id="report-view" name="report-view">
+                <option value="user">User</option>
+                <option value="group">Group</option>
+                <option value="item">Item</option>
+                <option value="consolidated">Consolidated</option>
+            </select> -->
+
+            <button type="button" id="generate-report-btn">Generate Report</button>
+        </form>
+
+        <h2>Report</h2>
+        <div id="report-output">
+            <!-- Report Output  -->
+        </div>
+    </div>
+
+    <footer>
+        <p><a href="admin-dashboard.html">Back to Dashboard</a></p>
+        <br><br>
+        <p>&copy; 2024 Data Requisition System</p>
+        
+    </footer>
+
+    <script src="generate-report.js"></script>
+</body>
+</html>

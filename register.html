@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Register - Data Requisition System</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <header>
+        <h1>Data Requisition System</h1>
+        <nav>
+            <br>
+            <a href="index.html">Home</a>
+            <a href="register.html">Register</a>
+        </nav>
+    </header>
+    
+    <section id="register">
+        <h2>Create a New Account</h2>
+        <form id="register-form">
+            <!-- <label for="name">Full Name:</label>
+            <input type="text" id="name" required placeholder="Enter your full name"> -->
+            
+            <label for="user-name">User Name:</label>
+            <input type="text" id="user-name" required placeholder="Enter a user name"> 
+            <div id="username-error" style="color: red; display: none;">Username already taken. Please choose another one.</div>
+
+            <label for="email">Email:</label>
+            <input type="email" id="email" required placeholder="Enter your email">
+
+            <label for="password">Password:</label>
+            <input type="password" id="password" required placeholder="Enter your password">
+            <div id="password-strength" style="margin-top: 5px;"></div>
+            <div>
+                <input type="checkbox" id="toggle-password"> Show Password
+            </div>
+            
+
+            <label for="confirm-password">Confirm Password:</label>
+            <input type="password" id="confirm-password" required placeholder="Confirm your password">
+            <!-- <div>
+                <input type="checkbox" id="toggle-password"> Show Password
+            </div> -->
+            
+
+            <label for="role">Role:</label>
+            <select id="role" required>
+                <option value="user">User</option>
+            </select>
+
+            <label for="group">Group:</label>
+            <select id="group" required>
+                <option value="Para-09">Para-09</option>
+                <option value="Para-10">Para-10</option>
+                <option value="Para-11">Para-11</option>
+                <option value="HRD">HRD</option>
+            </select>
+            
+            <button type="submit">Register</button>
+        </form>
+        <p><br>Already have an account? <a href="index.html">Login here</a></p>
+    </section>
+
+    <section id="email-verification" style="display: none;">
+        <h2>Check Your Email</h2>
+        <p>A verification email has been sent to your email address. Please click the link in the email to verify your account.</p>
+    </section>
+
+    <footer>
+        <p>© 2024 Data Requisition System</p>
+    </footer>
+
+    <script src="register.js"></script>
+</body>
+</html>

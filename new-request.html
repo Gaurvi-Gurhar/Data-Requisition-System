@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Create New Request</title>
+    <link rel="stylesheet" href="style.css"> 
+    <style>
+        /* Styling for selected items */
+        #selected-items {
+            margin-top: 15px;
+            padding: 10px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+        }
+        .item {
+            display: inline-block;
+            margin: 5px;
+            padding: 5px 10px;
+            background: #f0f0f0;
+            border-radius: 15px;
+            position: relative;
+        }
+        .item .remove {
+            margin-left: 10px;
+            color: red;
+            cursor: pointer;
+            font-weight: bold;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>Create New Request</h1>
+        <nav>
+            <br>
+            <a href="dashboard.html">Back to Dashboard</a> | 
+            <a href="index.html">Logout</a>
+        </nav>
+    </header>
+    
+    <div id="new-request">
+        <form id="new-request-form">
+
+            <label for="user-name">User Name:</label>
+            <input type="text" id="user-name" required placeholder="Enter a user name"> 
+
+            <label for="group">Group:</label>
+            <select id="group" required>
+                <option value="Para-09">Para-09</option>
+                <option value="Para-10">Para-10</option>
+                <option value="Para-11">Para-11</option>
+                <option value="HRD">HRD</option>
+            </select>
+
+            <label for="item-name">Select Item:</label>
+            <select id="item-name" name="item-name" required>
+                <option value="" disabled selected>Select an item</option>
+                <option value="item1">Item 1</option>
+                <option value="item2">Item 2</option>
+                <option value="item3">Item 3</option>
+                <option value="other">Other</option>
+            </select>    
+            <div id="custom-item" style="display: none; margin-top: 10px;">
+                <label for="custom-item-name">Custom Item:</label>
+                <input type="text" id="custom-item-name" placeholder="Enter custom item name">
+                <button type="button" id="add-custom-item">Add</button>
+            </div>
+
+            <label for="quantity">Quantity:</label>
+            <input type="number" id="quantity" name="quantity" required min="0">
+            
+            <label for="quantity-last2years">Past Purchase:</label>
+            <input type="number" id="quantity-last2years" placeholder="Enter no. of purchases in the last 2 years" name="quantity-last2years" required min="0">
+
+            <!-- <label for="priority">Priority:</label>
+            <select id="priority" name="priority">
+                <option value="low">Low</option>
+                <option value="medium">Medium</option>
+                <option value="high">High</option>
+            </select> -->
+
+            <!-- <label for="deadline">Deadline:</label>
+            <input type="date" id="deadline" name="deadline" required> -->
+
+            <button type="submit">Submit Request</button>
+        </form>
+
+        <div id="selected-items">
+            <h3>Selected Items:</h3>
+            <div id="items-list"></div>
+        </div>
+    </div>
+
+    <footer>
+        <p>&copy; 2024 Data Requisition System</p>
+    </footer>
+
+    <script>
+        const itemName = document.getElementById('item-name');
+        const customItemDiv = document.getElementById('custom-item');
+        const customItemName = document.getElementById('custom-item-name');
+        const addCustomItem = document.getElementById('add-custom-item');
+        const itemsList = document.getElementById('items-list');
+        const form = document.getElementById('new-request-form');
+
+        // Display custom item input if "Other" is selected
+        itemName.addEventListener('change', () => {
+            if (itemName.value === 'other') {
+                customItemDiv.style.display = 'block';
+            } else if (itemName.value) {
+                // Allow only one selected item
+                clearItemsList();
+                addItemToList(itemName.options[itemName.selectedIndex].text);
+                itemName.value = ""; // Reset dropdown after selection
+            }
+        });
+
+        // Add a custom item to the list
+        addCustomItem.addEventListener('click', () => {
+            const customValue = customItemName.value.trim();
+            if (customValue) {
+                // Allow only one selected item
+                clearItemsList();
+                addItemToList(customValue);
+                customItemName.value = '';
+                customItemDiv.style.display = 'none';
+            }
+        });
+
+        // Function to add items to the list
+        function addItemToList(item) {
+            // Create item div
+            const itemDiv = document.createElement('div');
+            itemDiv.classList.add('item');
+            itemDiv.textContent = item;
+
+            // Add remove button
+            const removeButton = document.createElement('span');
+            removeButton.classList.add('remove');
+            removeButton.textContent = '×';
+            removeButton.addEventListener('click', () => {
+                itemsList.removeChild(itemDiv);
+            });
+
+            itemDiv.appendChild(removeButton);
+            itemsList.appendChild(itemDiv);
+        }
+
+        // Function to clear all items
+        function clearItemsList() {
+            itemsList.innerHTML = '';
+        }
+
+    </script>
+</body>
+</html>

@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Allocate Items</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <header>
+        <h1>Allocate Items</h1>
+    </header>
+
+    <div id="allocate-items-section">
+        <h2>Pending Requests</h2>
+        <table>
+            <thead>
+                <tr>
+                    <th>Request ID</th>
+                    <th>User Name</th>
+                    <th>Item Name</th>
+                    <th>Quantity</th>
+                    <!-- <th>Status</th> -->
+                    <th>Action</th>
+                </tr>
+            </thead>
+            <tbody>
+                <!-- example data rows just for showing and checking frontend (will be replaced with dynamic data later) -->
+                <tr>
+                    <td>REQ112233</td>
+                    <td>Pooja Kanwar</td>
+                    <td>Monitor</td>
+                    <td>3</td>
+                    <!-- <td>Pending</td> -->
+                    <td>
+                        <button class="approve-btn">Approve</button>
+                        <button class="reject-btn">Reject</button>
+                    </td>
+                </tr>
+                <tr>
+                    <td>REQ223344</td>
+                    <td>Zafeer Khan</td>
+                    <td>Keyboard</td>
+                    <td>5</td>
+                    <!-- <td>Pending</td> -->
+                    <td>
+                        <button class="approve-btn">Approve</button>
+                        <button class="reject-btn">Reject</button>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+
+    <footer>
+        <p><a href="admin-dashboard.html">Back to Dashboard</a></p>
+    </footer>
+
+    <script src="allocate-items.js"></script>
+</body>
+</html>
