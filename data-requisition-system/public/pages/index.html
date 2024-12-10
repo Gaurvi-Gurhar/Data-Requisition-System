@@ -1,0 +1,186 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login - Data Requisition System</title>
+    <link rel="stylesheet" href="../style/style.css">
+    <style>
+        /* General Reset */
+/* * {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+} */
+
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f4f6f9;
+    color: #333;
+    line-height: 1.6;
+}
+
+/* Header */
+header {
+    background: #081828;
+    color: #fff;
+    padding: 1rem 0;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+header h1 {
+    text-align: center;
+    font-size: 1.8rem;
+    font-weight: bold;
+    color: #fff;
+    margin-bottom: 0.5rem;
+}
+
+header nav {
+    text-align: center;
+    margin-top: 0.5rem;
+}
+
+header nav a {
+    color: #fff;
+    text-decoration: none;
+    margin: 0 0.75rem;
+    font-size: 1rem;
+    font-weight: 500;
+    transition: color 0.3s;
+}
+
+header nav a:hover {
+    color: #ffd700;
+}
+
+/* Login Section */
+#login {
+    max-width: 500px;
+    margin: 2rem auto;
+    background: #fff;
+    padding: 2rem;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+#login h2 {
+    text-align: center;
+    margin-bottom: 1.5rem;
+    font-size: 1.5rem;
+    color: #333;
+}
+
+#login-form label {
+    display: block;
+    font-weight: 600;
+    margin-bottom: 0.5rem;
+    font-size: 1rem;
+    color: #555;
+}
+
+#login-form input {
+    width: 100%;
+    padding: 0.75rem;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    font-size: 1rem;
+    margin-bottom: 1rem;
+    transition: border-color 0.3s, box-shadow 0.3s;
+}
+
+#login-form input:focus {
+    border-color: #007bff;
+    box-shadow: 0 0 5px rgba(0, 123, 255, 0.5);
+    outline: none;
+}
+
+#login-form button {
+    width: 100%;
+    padding: 0.75rem;
+    background: #007bff;
+    color: #fff;
+    font-size: 1rem;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-weight: 600;
+    transition: background 0.3s;
+}
+
+#login-form button:hover {
+    background: #0056b3;
+}
+
+#login p {
+    text-align: center;
+    margin-top: 1rem;
+    font-size: 0.9rem;
+}
+
+#login p a {
+    color: #007bff;
+    text-decoration: none;
+    font-weight: 600;
+    transition: color 0.3s;
+}
+
+#login p a:hover {
+    color: #0056b3;
+}
+
+/* Footer */
+footer {
+    background: #333;
+    color: #fff;
+    text-align: center;
+    padding: 1rem 0;
+    margin-top: 2rem;
+    font-size: 0.9rem;
+}
+
+footer p {
+    margin: 0;
+}
+
+    </style>
+</head>
+<body>
+    <header>
+        <h1>Data Requisition System</h1>
+        <nav>
+            <br>
+            <a href="index.html">Home</a>
+            <a href="register.html">Register</a>
+            <a href="dashboard.html">User Dashboard</a>
+            <a href="admin-dashboard.html">Admin Dashboard</a>
+        </nav>
+    </header>
+    
+    <section id="login">
+        <h2>Login</h2>
+        <form id="login-form">
+            <label for="email">Email:</label>
+            <input type="email" id="email" required placeholder="Enter your email">
+            
+            <label for="password">Password:</label>
+            <input type="password" id="password" required placeholder="Enter your password">
+            
+            <button type="submit">Login</button>
+        </form>
+        <p><br>Don't have an account? <a href="register.html">Register here</a></p>
+    </section>
+
+    <footer>
+        <br>
+        <p>© 2024 Data Requisition System
+            <!-- <br><br>
+            Developed by <b>Gaurvi Gurhar</b>, <b>Deepti Agarwal</b>, and <b>Akash Kumar</b> 
+            <br>
+            as part of the ADRDE training project. -->
+        </p>
+    </footer>
+
+    <script src="../js/script.js"></script>
+</body>
+</html>

@@ -47,3 +47,45 @@ function validateRegistration(username, email, password, confirmPassword) {
 
     return true;
 }
+
+//  ------- User Register code starts from here
+
+
+document.getElementById("register-form").addEventListener("submit", async function (e) {
+    e.preventDefault();
+
+    const username = document.getElementById("user-name").value;
+    const email = document.getElementById("email").value;
+    const password = document.getElementById("password").value;
+    const confirmPassword = document.getElementById("confirm-password").value;
+    const group_name = document.getElementById("group").value;
+
+    if (password !== confirmPassword) {
+        alert("Passwords do not match.");
+        return;
+    }
+
+    const userData = { username, email, password, group_name };
+
+    try {
+        const response = await fetch("http://localhost:3000/auth/register", {
+            method: "POST",
+            headers: {
+                "Content-Type": "application/json",
+            },
+            body: JSON.stringify(userData),
+        });
+
+        const result = await response.text();
+        const message = JSON.parse(result);
+
+        if (response.ok) {
+            alert(message.message);
+            document.getElementById("register-form").reset(); // Clear the form fields
+        } else {
+            alert("Registration failed: " + message.message);
+        }
+    } catch (error) {
+        console.error("Error:", error);
+    }
+});

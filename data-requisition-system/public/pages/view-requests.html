@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>View Existing Requests</title>
+    <link rel="stylesheet" href="../style/style.css">
+</head>
+<body>
+    <header>
+        <h2>View Existing Requests</h2>
+    </header>
+
+    <section id="request-list">
+        <table>
+            <thead>
+                <tr>
+                    <th>Request ID</th>
+                    <th>Item Name</th>
+                    <th>Quantity</th>
+                    <th>Status</th>
+                    <th>Date of Request</th>
+                </tr>
+            </thead>
+            <tbody>
+                <!-- dynamic content will be inserted here -->
+            </tbody>
+        </table>
+    </section>
+
+    <div id="pagination">
+        <button id="prev" disabled>Previous</button>
+        <span id="page-info"></span>
+        <button id="next">Next</button>
+    </div>
+
+    <footer>
+        <a href="dashboard.html">Back to Dashboard</a>
+    </footer>
+
+    <script src="../js/viewRequest.js"></script>
+    
+    
+
+</body>
+</html>

@@ -1,15 +1,17 @@
 //login form handler 
-document.getElementById('login-form').addEventListener('submit', function(e) {
-    e.preventDefault();
 
-    const email = document.getElementById('email').value;
-    const password = document.getElementById('password').value;
+// ----------- new code is at the bottom
+// document.getElementById('login-form').addEventListener('submit', function(e) {
+//     e.preventDefault();
 
-    console.log('Email:', email);
-    console.log('Password:', password);
+//     const email = document.getElementById('email').value;
+//     const password = document.getElementById('password').value;
 
-    alert('Login functionality will be connected soon!');
-});
+//     console.log('Email:', email);
+//     console.log('Password:', password);
+
+//     alert('Login functionality will be connected soon!');
+// });
 
 
 
@@ -209,3 +211,40 @@ document.addEventListener('DOMContentLoaded', function() {
     // Initial population of table and pagination
     paginateRequests();
 });
+
+
+// ---------------  Login Code starts from here
+
+document.getElementById("login-form").addEventListener("submit", async function (e) {
+    e.preventDefault();
+
+    const email = document.getElementById("email").value;
+    const password = document.getElementById("password").value;
+
+    const userData = { email, password };
+    console.log("Login Data:", userData);
+
+    try {
+        const response = await fetch("http://localhost:3000/auth/login", {
+            method: "POST",
+            headers: {
+                "Content-Type": "application/json",
+            },
+            body: JSON.stringify(userData),
+        });
+
+        const result = await response.text();
+        const message = JSON.parse(result);
+
+        if (response.ok) {
+            alert(message.message);
+            document.getElementById("login-form").reset(); // Clear the form fields
+        } else {
+            alert("Registration failed: " + message.message);
+        }
+    } catch (error) {
+        console.error("Error:", error);
+    }
+
+});
+
