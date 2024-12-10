@@ -2,7 +2,7 @@ require('dotenv').config();
 const express = require('express');
 const bodyParser = require('body-parser');
 const cors = require('cors');
-const db = require('./config/db');
+const db = require('./config/db1');
 const userRoutes = require('./routes/userRoutes');
 const requestsRoutes = require('./routes/requestsRoutes');
 
@@ -18,7 +18,7 @@ app.use(express.json());
 app.use('/api/users', userRoutes);
 console.log('userRoutes is successfully mounted');
 app.use('/api/requests', requestsRoutes);
-
+console.log('requestsRoutes is successfully mounted');
 
 // Test endpoint
 app.get('/', (req, res) => {
@@ -27,7 +27,7 @@ app.get('/', (req, res) => {
 
 // Start server
 app.listen(PORT, () => {
-    console.log(`Server is running on http://localhost:${PORT}`);
+    console.log('Server is running on port:', PORT);
 });
 
 
