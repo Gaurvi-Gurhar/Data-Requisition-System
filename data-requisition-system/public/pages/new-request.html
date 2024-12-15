@@ -43,10 +43,10 @@
         <form id="new-request-form">
 
             <label for="user-name">User Name:</label>
-            <input type="text" id="user-name" required placeholder="Enter a user name"> 
+            <input type="text" id="user-name" name="user-name" required placeholder="Enter a user name"> 
 
             <label for="group">Group:</label>
-            <select id="group" required>
+            <select id="group" name="group" required>
                 <option value="Para-09">Para-09</option>
                 <option value="Para-10">Para-10</option>
                 <option value="Para-11">Para-11</option>
@@ -54,7 +54,7 @@
             </select>
 
             <label for="item-name">Select Item:</label>
-            <select id="item-name" name="item-name" required>
+            <select id="item-name" name="item-name">
                 <option value="" disabled selected>Select an item</option>
                 <option value="item1">Item 1</option>
                 <option value="item2">Item 2</option>
@@ -63,7 +63,7 @@
             </select>    
             <div id="custom-item" style="display: none; margin-top: 10px;">
                 <label for="custom-item-name">Custom Item:</label>
-                <input type="text" id="custom-item-name" placeholder="Enter custom item name">
+                <input type="text" id="custom-item-name" name="custom-item-name" placeholder="Enter custom item name">
                 <button type="button" id="add-custom-item">Add</button>
             </div>
 
@@ -71,17 +71,7 @@
             <input type="number" id="quantity" name="quantity" required min="0">
             
             <label for="quantity-last2years">Past Purchase:</label>
-            <input type="number" id="quantity-last2years" placeholder="Enter no. of purchases in the last 2 years" name="quantity-last2years" required min="0">
-
-            <!-- <label for="priority">Priority:</label>
-            <select id="priority" name="priority">
-                <option value="low">Low</option>
-                <option value="medium">Medium</option>
-                <option value="high">High</option>
-            </select> -->
-
-            <!-- <label for="deadline">Deadline:</label>
-            <input type="date" id="deadline" name="deadline" required> -->
+            <input type="number" id="quantity-last2years" name="quantity-last2years" placeholder="Enter past purchases in 2 years" required min="0">
 
             <button type="submit">Submit Request</button>
         </form>
@@ -99,3 +89,4 @@
     <script src="../js/newRequest.js"></script>
 </body>
 </html>
+

@@ -79,6 +79,91 @@
 // }
 
 
+document.getElementById("login-form").addEventListener("submit", async function (e) {
+    e.preventDefault();
+
+    const email = document.getElementById("email").value;
+    const password = document.getElementById("password").value;
+
+    const userData = { email, password };
+    console.log("Login Data:", userData);
+
+    try {
+        const response = await fetch("http://localhost:3000/auth/login", {
+            method: "POST",
+            headers: {
+                "Content-Type": "application/json",
+            },
+            body: JSON.stringify(userData),
+        });
+
+        const result = await response.text();
+        const {message, data} = JSON.parse(result);
+
+        localStorage.setItem("group_name", data.group_name);
+
+        console.log(message,data)
+
+        if (response.ok) {
+            alert(message);
+            document.getElementById("login-form").reset();
+            if (data.role === "user") {
+                console.log("good")
+                window.location.href = "./dashboard.html"; 
+            }else if(data.role === "admin"){
+                window.location.href = "./admin-dashboard.html"; 
+            } else {
+                alert("You do not have access to the user dashboard.");
+            }
+        } else {
+            alert("Registration failed: " + message.message);
+        }
+    } catch (error) {
+        console.error("Error:", error);
+    }
+
+});
+
+
+
+// document.addEventListener('DOMContentLoaded', function () {
+            // document.getElementById("update-request-form").addEventListener("submit",async function (e) {
+            //     e.preventDefault();
+
+            //     const request_id = document.getElementById('request-id').value;
+            //     const item_name = document.getElementById('item-name').value;
+            //     const quantity = document.getElementById('quantity').value;
+            //     const past_purchase = document.getElementById('past-purchase').value;
+
+            //     const formData = { request_id, item_name, quantity, past_purchase };
+
+            //     console.log("Form Data:", formData);
+
+            //     try {
+            //         const response = await fetch("http://localhost:3000/user/update-request", {
+            //             method: "PUT",
+            //             headers: {
+            //                 "Content-Type": "application/json",
+            //             },
+            //             body: JSON.stringify(userData),
+            //         });
+            
+            //         const result = await response.text();
+            //         const message = JSON.parse(result);
+            
+            //         if (response.ok) {
+            //             alert(message.message);
+            //             // document.getElementById("update-request-form").reset();
+            //         } else {
+            //             alert("Update Failed: " + message.message);
+            //         }
+            //     } catch (error) {
+            //         console.error("Error:", error);
+            //     }
+            // });
+// });
+
+
 
 
 
@@ -214,37 +299,3 @@ document.addEventListener('DOMContentLoaded', function() {
 
 
 // ---------------  Login Code starts from here
-
-document.getElementById("login-form").addEventListener("submit", async function (e) {
-    e.preventDefault();
-
-    const email = document.getElementById("email").value;
-    const password = document.getElementById("password").value;
-
-    const userData = { email, password };
-    console.log("Login Data:", userData);
-
-    try {
-        const response = await fetch("http://localhost:3000/auth/login", {
-            method: "POST",
-            headers: {
-                "Content-Type": "application/json",
-            },
-            body: JSON.stringify(userData),
-        });
-
-        const result = await response.text();
-        const message = JSON.parse(result);
-
-        if (response.ok) {
-            alert(message.message);
-            document.getElementById("login-form").reset(); // Clear the form fields
-        } else {
-            alert("Registration failed: " + message.message);
-        }
-    } catch (error) {
-        console.error("Error:", error);
-    }
-
-});
-

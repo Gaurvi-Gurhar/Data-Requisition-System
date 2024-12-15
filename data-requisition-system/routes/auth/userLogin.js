@@ -22,6 +22,7 @@ router.post("/login", (req, res) => {
         if (result.length > 0) {
             return res.status(200).json({
                 message: "Successfully logged in.",
+                data: result[0]
             });
         } else {
             return res.status(404).json({ error: "User does not exist." });
