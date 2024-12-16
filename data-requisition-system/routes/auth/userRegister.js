@@ -3,17 +3,17 @@ const router = express.Router();
 const db = require("../../config/db");
 
 router.post("/register", (req, res) => {
-    const { username, email, password, group_name } = req.body;
+    const { username, email, password, group_name, role } = req.body;
 
     console.log(req.body, "---------req.body")
 
-    if (!username || !email || !password || !group_name) {
+    if (!username || !email || !password || !group_name || !role) {
         return res.status(400).json({ error: "All fields are required." });
     }
 
-    const sql = "INSERT INTO user (username, email, password, group_name) VALUES (?, ?, ?, ?)";
+    const sql = "INSERT INTO user (username, email, password, group_name, role) VALUES (?, ?, ?, ?, ?)";
 
-    db.query(sql, [username, email, password, group_name], (err, result) => {
+    db.query(sql, [username, email, password, group_name, role], (err, result) => {
         
         if (err) {
             console.error("Error registering user:", err);

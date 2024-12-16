@@ -56,7 +56,7 @@ async function applyFilters() {
                     <td>${row.request_id}</td>
                     <td>${row.username}</td>
                     <td>${row.group_name}</td>
-                    <td>${row.item_name}</td>
+                    <td>${row.selected_item}</td>
                     <td>${row.quantity}</td>
                     <td>${row.status}</td>
                     <td>${row.date_of_request}</td>

@@ -56,7 +56,7 @@ function renderTable() {
             <tr>
                 <td>${request.request_id}</td>
                 <td>${request.username}</td>
-                <td>${request.item_id}</td>
+                <td>${request.selected_item}</td>
                 <td>${request.quantity}</td>
                 <td>
                     <button class="approve-btn">Approve</button>

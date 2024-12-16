@@ -59,13 +59,14 @@ document.getElementById("register-form").addEventListener("submit", async functi
     const password = document.getElementById("password").value;
     const confirmPassword = document.getElementById("confirm-password").value;
     const group_name = document.getElementById("group").value;
+    const role = document.getElementById("role").value;
 
     if (password !== confirmPassword) {
         alert("Passwords do not match.");
         return;
     }
 
-    const userData = { username, email, password, group_name };
+    const userData = { username, email, password, group_name, role };
 
     try {
         const response = await fetch("http://localhost:3000/auth/register", {
