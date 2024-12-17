@@ -16,8 +16,8 @@ router.post('/insert-items', async (req, res) => {
 
     db.query(sql, [item_name], (err, result) => {
         if (err) {
-            console.error("Error registering user:", err);
-            return res.status(500).json({ error: "Error registering user." });
+            console.error("Error inserting item:", err);
+            return res.status(500).json({ error: "Error inserting item." });
         }
 
         return res.status(201).json({

@@ -4,11 +4,11 @@ document.getElementById("update-request-form").addEventListener("submit", async 
     console.log("working")
 
     const request_id = document.getElementById("request-id").value;
-    const item_name = document.getElementById("item-name").value;
+    const selected_item = document.getElementById("item-name").value;
     const quantity = document.getElementById("quantity").value;
     const past_purchase = document.getElementById("past-purchase").value;
 
-    const formData = { request_id, item_name, quantity, past_purchase };
+    const formData = { request_id, selected_item, quantity, past_purchase };
 
     console.log("Form Data:", formData);
 
@@ -22,10 +22,11 @@ document.getElementById("update-request-form").addEventListener("submit", async 
         });
 
         const result = await response.json(); // Parse the JSON response
-        console.log("Response:", result);
+        console.log("Response:", result.message);
 
         if (response.ok) {
             alert(result.message);
+            document.getElementById("update-request-form").reset();
         } else {
             alert("Update Failed: " + (result.error || "Unknown error occurred."));
         }

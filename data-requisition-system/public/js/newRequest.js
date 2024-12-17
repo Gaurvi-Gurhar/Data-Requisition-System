@@ -79,10 +79,12 @@ itemName.addEventListener('change', () => {
 
 addCustomItem.addEventListener('click', () => {
     const customValue = customItemName.value.trim();
+console.log(customValue, "------------------value")
+
     if (customValue) {
         clearItemsList();
         addItemToList(customValue);
-        customItemName.value = '';
+        // customItemName.value = '';
         customItemDiv.style.display = 'none';
     }
 });
@@ -190,8 +192,8 @@ document.addEventListener('DOMContentLoaded', fetchItems);
 
 
 addCustomItem.addEventListener('click', async () => {
-    const item_name = customItemName.value;
-    console.log(item_name, "--------itemane")
+    const item_name = customItemName.value.trim();
+console.log(item_name, "------------------value")
 
     if (item_name) {
         try {
